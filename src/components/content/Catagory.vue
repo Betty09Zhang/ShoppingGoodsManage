@@ -1,16 +1,13 @@
 <!--  -->
 <template>
- <div>
-   <router-view :key="key"></router-view>
- </div>
+ <div>Catagory</div>
 </template>
 
 <script>
 export default {
- name: 'About',
+ name: 'Catagory',
  data () {
   return {
-    key: this.$route.key
   }
  },
 
@@ -59,5 +56,5 @@ export default {
 }
 
 </script>
-<style lang='scss' scoped>
+<style lang='less' scoped>
 </style>

@@ -1,16 +1,22 @@
 <!--  -->
 <template>
  <div>
-   <router-view :key="key"></router-view>
+     <router-link :to="to">
+        <slot/>
+     </router-link>
  </div>
 </template>
 
 <script>
 export default {
- name: 'About',
+ name: 'SideitemLink',
+ props: {
+    to: {
+        type: String
+    }
+ },
  data () {
   return {
-    key: this.$route.key
   }
  },
 

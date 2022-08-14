@@ -1,17 +1,26 @@
 <!--  -->
 <template>
- <div>
-   <router-view :key="key"></router-view>
- </div>
+    <div>
+        <el-menu class=""
+            mode="vertical"
+        >
+            <SideBarItem  v-for="item of routes" :item="item" :key="item.path"></SideBarItem> 
+        </el-menu>
+    </div>
 </template>
 
 <script>
+import SideBarItem from "./SideBarItem.vue"
+import { routes } from "../../router/index"
 export default {
- name: 'About',
+ name: 'SideBar',
+ components: {
+    SideBarItem
+ },
  data () {
-  return {
-    key: this.$route.key
-  }
+    return {
+        routes
+    }
  },
 
  //方法集合

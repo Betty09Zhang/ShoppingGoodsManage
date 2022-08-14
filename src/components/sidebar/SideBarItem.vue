@@ -1,16 +1,33 @@
 <!--  -->
 <template>
  <div>
-   <router-view :key="key"></router-view>
+     <side-item-link :to="item.path" v-if="!item.children">
+        <el-menu-item :index="item.path" > 
+            
+            <span slot="title">{{item.name}}</span>
+        </el-menu-item>
+     </side-item-link>
+     <el-submenu :index="item.path" v-else>
+        <template slot="title"><i class="el-icon-menu"></i>{{item.name}}</template>
+        <side-bar-item  v-for="child of item.children" :item="child" :key="child.path"></side-bar-item>
+     </el-submenu>
  </div>
 </template>
 
 <script>
+import SideItemLink from './SideItemLink.vue'
 export default {
- name: 'About',
+ name: 'SideBarItem',
+ components: {
+    SideItemLink 
+ },
+ props: {
+    item: {
+        type: Object
+    }
+ },
  data () {
   return {
-    key: this.$route.key
   }
  },
 

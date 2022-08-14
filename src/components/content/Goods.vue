@@ -1,16 +1,13 @@
 <!--  -->
 <template>
- <div>
-   <router-view :key="key"></router-view>
- </div>
+ <div>Gods</div>
 </template>
 
 <script>
 export default {
- name: 'About',
+ name: 'Goods',
  data () {
   return {
-    key: this.$route.key
   }
  },
 
